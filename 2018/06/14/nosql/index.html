@@ -118,7 +118,7 @@
 <meta property="og:description" content="NoSql 简介NOSQL(NOSQL = NOT ONLY SQL)，意即”不仅仅是SQL”。在现代的计算系统上每天网络上都会产生庞大的数据量。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://lc-7t0bebm8.cn-n1.lcfile.com/65fc96f5077c1d5b1f4e.jpg">
-<meta property="og:updated_time" content="2018-06-14T08:04:02.673Z">
+<meta property="og:updated_time" content="2018-06-14T08:45:46.469Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="初识NoSQL">
 <meta name="twitter:description" content="NoSql 简介NOSQL(NOSQL = NOT ONLY SQL)，意即”不仅仅是SQL”。在现代的计算系统上每天网络上都会产生庞大的数据量。">
@@ -352,7 +352,7 @@
                 
               
 
-              <time title="创建时间：2018-06-14 14:28:00 / 修改时间：16:04:02" itemprop="dateCreated datePublished" datetime="2018-06-14T14:28:00+08:00">2018-06-14</time>
+              <time title="创建时间：2018-06-14 14:28:00 / 修改时间：16:45:46" itemprop="dateCreated datePublished" datetime="2018-06-14T14:28:00+08:00">2018-06-14</time>
             
 
             
@@ -964,9 +964,25 @@
             });
           } else {
             
-              var $element = $(document.getElementById(url));
-              $element.find('.leancloud-visitors-count').text('Counter not initialized! See more at console err msg.');
-              console.error('ATTENTION! LeanCloud counter has security bug, see here how to solve it: https://github.com/theme-next/hexo-leancloud-counter-security. \n But you also can use LeanCloud without security, by set \'security\' option to \'false\'.');
+              var newcounter = new Counter();
+              /* Set ACL */
+              var acl = new AV.ACL();
+              acl.setPublicReadAccess(true);
+              acl.setPublicWriteAccess(true);
+              newcounter.setACL(acl);
+              /* End Set ACL */
+              newcounter.set("title", title);
+              newcounter.set("url", url);
+              newcounter.set("time", 1);
+              newcounter.save(null, {
+                success: function(newcounter) {
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+                },
+                error: function(newcounter, error) {
+                  console.log('Failed to create');
+                }
+              });
             
           }
         },

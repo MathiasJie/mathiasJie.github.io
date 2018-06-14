@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-06-14T09:19:33.476Z</updated>
+  <updated>2018-06-14T10:26:44.446Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,16 +21,13 @@
     <link href="http://yoursite.com/2018/06/14/nosql/"/>
     <id>http://yoursite.com/2018/06/14/nosql/</id>
     <published>2018-06-14T06:28:00.092Z</published>
-    <updated>2018-06-14T09:19:33.476Z</updated>
+    <updated>2018-06-14T10:26:44.446Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="NoSql-简介"><a href="#NoSql-简介" class="headerlink" title="NoSql 简介"></a>NoSql 简介</h2><p>NOSQL(<strong>NOSQL = NOT ONLY SQL</strong>)，意即”不仅仅是SQL”。在现代的计算系统上每天网络上都会产生庞大的数据量。通过应用实践证明，关系模型是非常适合于客户服务器编程，远远超出预期的利益，今天它是结构化数据存储在网络和商务应用的主导技术。<br>NOSQL 是一项全新的数据库革命性运动，早期就有人提出，发展至2009年趋势越发高涨。NOSQL的拥护者们提倡运用非关系型的数据存储，相对于铺天盖地的关系型数据库运用，这一概念无疑是一种全新的思维的注入。</p><h2 id="关系型数据库遵循ACID规则"><a href="#关系型数据库遵循ACID规则" class="headerlink" title="关系型数据库遵循ACID规则"></a>关系型数据库遵循ACID规则</h2><p>事务在英文中是transaction，和现实世界中的交易很类似，它有如下四个特性：<br>1.　 <strong>A (Atomicity) 原子性</strong><br>　　原子性很容易理解，也就是说<strong>事务里的所有操作要么全部做完，要么都不做，事务成功的条件是事务里的所有操作都成功，只要有一个操作失败，整个事务就失败，需要回滚</strong>。<br>　　比如银行转账，从A账户转100元至B账户，分为两个步骤：1）从A账户取100元；2）存入100元至B账户。这两步要么一起完成，要么一起不完成，如果只完成第一步，第二步失败，钱会莫名其妙少了100元。<br>2.　 <strong>C (Consistency) 一致性</strong><br>　　一致性也比较容易理解，也就是说<strong>数据库要一直处于一致的状态，事务的运行不会改变数据库原本的一致性约束。</strong><br>　　例如现有完整性约束a+b=10，如果一个事务改变了a，那么必须得改变b，使得事务结束后依然满足a+b=10，否则事务失败。<br>3.　 <strong>I (Isolation) 独立性</strong><br>　　所谓的独立性是指<strong>并发的事务之间不会互相影响，如果一个事务要访问的数据正在被另外一个事务修改，只要另外一个事务未提交，它所访问的数据就不受未提交事务的影响。</strong><br>　　比如现在有个交易是从A账户转100元至B账户，在这个交易还未完成的情况下，如果此时B查询自己的账户，是看不到新增加的100元的。<br>4.　 <strong>D (Durability) 持久性</strong><br>　　持久性是指<strong>一旦事务提交后，它所做的修改将会永久的保存在数据库上，即使出现宕机也不会丢失。</strong></p><h2 id="关系型数据库（RDBMS）与NoSQL对比"><a href="#关系型数据库（RDBMS）与NoSQL对比" class="headerlink" title="关系型数据库（RDBMS）与NoSQL对比"></a>关系型数据库（RDBMS）与NoSQL对比</h2><p><strong>RDBMS</strong> </p><ul><li>高度组织化结构化数据 </li><li>结构化查询语言（SQL） (SQL) </li><li>数据和关系都存储在单独的表中。 </li><li>数据操纵语言，数据定义语言 </li><li>严格的一致性</li><li>基础事务</li></ul><p><strong>NoSQL</strong></p><ul><li>代表着不仅仅是SQL</li><li>没有声明性查询语言</li><li>没有预定义的模式</li><li><strong>键 - 值对存储，列存储，文档存储，图形数据库</strong></li><li>最终一致性，而非ACID属性</li><li>非结构化和不可预知的数据</li><li>CAP定理 </li><li><strong>高性能，高可用性和可伸缩性</strong></li></ul><h2 id="NoSQL优点和缺点"><a href="#NoSQL优点和缺点" class="headerlink" title="NoSQL优点和缺点"></a>NoSQL优点和缺点</h2><p><strong>优点：</strong></p><ul><li>高可扩展性</li><li>分布式计算</li><li>低成本</li><li>架构的灵活性，半结构化数据</li><li>没有复杂的关系</li></ul><p><strong>缺点:</strong></p><ul><li>没有标准化</li><li>有限的查询功能（到目前为止）</li><li>最终一致是不直观的程序</li></ul><p><img src="http://lc-7t0bebm8.cn-n1.lcfile.com/65fc96f5077c1d5b1f4e.jpg" alt=""></p><p>文章摘自<a href="http://www.runoob.com/mongodb/nosql.html" title="菜鸟驿站" target="_blank" rel="noopener">菜鸟驿站</a>，仅供学习，勿用作其他用途。</p>]]></content>
+    <content type="html"><![CDATA[<p><img src="http://lc-7t0bebm8.cn-n1.lcfile.com/65fc96f5077c1d5b1f4e.jpg" alt=""><br><a id="more"></a></p><h2 id="NoSql-简介"><a href="#NoSql-简介" class="headerlink" title="NoSql 简介"></a>NoSql 简介</h2><p>NOSQL(<strong>NOSQL = NOT ONLY SQL</strong>)，意即”不仅仅是SQL”。在现代的计算系统上每天网络上都会产生庞大的数据量。通过应用实践证明，关系模型是非常适合于客户服务器编程，远远超出预期的利益，今天它是结构化数据存储在网络和商务应用的主导技术。<br>NOSQL 是一项全新的数据库革命性运动，早期就有人提出，发展至2009年趋势越发高涨。NOSQL的拥护者们提倡运用非关系型的数据存储，相对于铺天盖地的关系型数据库运用，这一概念无疑是一种全新的思维的注入。</p><h2 id="关系型数据库遵循ACID规则"><a href="#关系型数据库遵循ACID规则" class="headerlink" title="关系型数据库遵循ACID规则"></a>关系型数据库遵循ACID规则</h2><p>事务在英文中是transaction，和现实世界中的交易很类似，它有如下四个特性：<br>1.　 <strong>A (Atomicity) 原子性</strong><br>　　原子性很容易理解，也就是说<strong>事务里的所有操作要么全部做完，要么都不做，事务成功的条件是事务里的所有操作都成功，只要有一个操作失败，整个事务就失败，需要回滚</strong>。<br>　　比如银行转账，从A账户转100元至B账户，分为两个步骤：1）从A账户取100元；2）存入100元至B账户。这两步要么一起完成，要么一起不完成，如果只完成第一步，第二步失败，钱会莫名其妙少了100元。<br>2.　 <strong>C (Consistency) 一致性</strong><br>　　一致性也比较容易理解，也就是说<strong>数据库要一直处于一致的状态，事务的运行不会改变数据库原本的一致性约束。</strong><br>　　例如现有完整性约束a+b=10，如果一个事务改变了a，那么必须得改变b，使得事务结束后依然满足a+b=10，否则事务失败。<br>3.　 <strong>I (Isolation) 独立性</strong><br>　　所谓的独立性是指<strong>并发的事务之间不会互相影响，如果一个事务要访问的数据正在被另外一个事务修改，只要另外一个事务未提交，它所访问的数据就不受未提交事务的影响。</strong><br>　　比如现在有个交易是从A账户转100元至B账户，在这个交易还未完成的情况下，如果此时B查询自己的账户，是看不到新增加的100元的。<br>4.　 <strong>D (Durability) 持久性</strong><br>　　持久性是指<strong>一旦事务提交后，它所做的修改将会永久的保存在数据库上，即使出现宕机也不会丢失。</strong></p><h2 id="关系型数据库（RDBMS）与NoSQL对比"><a href="#关系型数据库（RDBMS）与NoSQL对比" class="headerlink" title="关系型数据库（RDBMS）与NoSQL对比"></a>关系型数据库（RDBMS）与NoSQL对比</h2><p><strong>RDBMS</strong> </p><ul><li>高度组织化结构化数据 </li><li>结构化查询语言（SQL） (SQL) </li><li>数据和关系都存储在单独的表中。 </li><li>数据操纵语言，数据定义语言 </li><li>严格的一致性</li><li>基础事务</li></ul><p><strong>NoSQL</strong></p><ul><li>代表着不仅仅是SQL</li><li>没有声明性查询语言</li><li>没有预定义的模式</li><li><strong>键 - 值对存储，列存储，文档存储，图形数据库</strong></li><li>最终一致性，而非ACID属性</li><li>非结构化和不可预知的数据</li><li>CAP定理 </li><li><strong>高性能，高可用性和可伸缩性</strong></li></ul><h2 id="NoSQL优点和缺点"><a href="#NoSQL优点和缺点" class="headerlink" title="NoSQL优点和缺点"></a>NoSQL优点和缺点</h2><p><strong>优点：</strong></p><ul><li>高可扩展性</li><li>分布式计算</li><li>低成本</li><li>架构的灵活性，半结构化数据</li><li>没有复杂的关系</li></ul><p><strong>缺点:</strong></p><ul><li>没有标准化</li><li>有限的查询功能（到目前为止）</li><li>最终一致是不直观的程序</li></ul><p>文章摘自<a href="http://www.runoob.com/mongodb/nosql.html" title="菜鸟驿站" target="_blank" rel="noopener">菜鸟驿站</a>，仅供学习，勿用作其他用途。</p>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;h2 id=&quot;NoSql-简介&quot;&gt;&lt;a href=&quot;#NoSql-简介&quot; class=&quot;headerlink&quot; title=&quot;NoSql 简介&quot;&gt;&lt;/a&gt;NoSql 简介&lt;/h2&gt;&lt;p&gt;NOSQL(&lt;strong&gt;NOSQL = NOT ONLY SQL&lt;/strong&gt;)，意
-      
+      &lt;p&gt;&lt;img src=&quot;http://lc-7t0bebm8.cn-n1.lcfile.com/65fc96f5077c1d5b1f4e.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;
     
     </summary>
     

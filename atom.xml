@@ -60,30 +60,4 @@
     
   </entry>
   
-  <entry>
-    <title>关于我</title>
-    <link href="http://yoursite.com/2018/06/13/aboutMe/"/>
-    <id>http://yoursite.com/2018/06/13/aboutMe/</id>
-    <published>2018-06-13T08:09:41.922Z</published>
-    <updated>2018-06-13T08:17:47.273Z</updated>
-    
-    <content type="html"><![CDATA[<p>初出茅庐的java程序猿，小白一枚，没事喜欢捣鼓捣鼓新的技术，虽然很菜。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;初出茅庐的java程序猿，小白一枚，没事喜欢捣鼓捣鼓新的技术，虽然很菜。&lt;/p&gt;
-
-      
-    
-    </summary>
-    
-      <category term="随笔" scheme="http://yoursite.com/categories/%E9%9A%8F%E7%AC%94/"/>
-    
-    
-      <category term="个人" scheme="http://yoursite.com/tags/%E4%B8%AA%E4%BA%BA/"/>
-    
-  </entry>
-  
 </feed>

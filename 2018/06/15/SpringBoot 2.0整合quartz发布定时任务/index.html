@@ -109,16 +109,18 @@
 
 
 
-  <meta name="description" content="面朝大海，春暖花开，学无止境...">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Mathias&#39;s blog">
-<meta property="og:url" content="http://yoursite.com/archives/2018/06/index.html">
+  <meta name="keywords" content="SpringBoot">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SpringBoot 2.0 +定时任务">
+<meta property="og:url" content="http://yoursite.com/2018/06/15/SpringBoot 2.0整合quartz发布定时任务/index.html">
 <meta property="og:site_name" content="Mathias&#39;s blog">
-<meta property="og:description" content="面朝大海，春暖花开，学无止境...">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://lc-7t0bebm8.cn-n1.lcfile.com/2f2c4529aebefbbd447b.jpg">
+<meta property="og:image" content="http://lc-7t0bebm8.cn-n1.lcfile.com/4206880c6c82aa84ef54.png">
+<meta property="og:updated_time" content="2018-06-15T07:54:03.586Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Mathias&#39;s blog">
-<meta name="twitter:description" content="面朝大海，春暖花开，学无止境...">
+<meta name="twitter:title" content="SpringBoot 2.0 +定时任务">
+<meta name="twitter:image" content="http://lc-7t0bebm8.cn-n1.lcfile.com/2f2c4529aebefbbd447b.jpg">
 
 
 
@@ -127,7 +129,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/2018/06/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/06/15/SpringBoot 2.0整合quartz发布定时任务/"/>
 
 
 
@@ -137,7 +139,7 @@
   };
 </script>
 
-  <title>归档 | Mathias's blog</title>
+  <title>SpringBoot 2.0 +定时任务 | Mathias's blog</title>
   
 
 
@@ -184,7 +186,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 	<a href="https://github.com/mathiasJie" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#64CEAA; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -253,7 +255,7 @@
         
         
           
-          <li class="menu-item menu-item-archives menu-item-active">
+          <li class="menu-item menu-item-archives">
     <a href="/archives/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
   </li>
@@ -265,28 +267,6 @@
 
   
     
-
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
 
   
 
@@ -312,154 +292,230 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/15/SpringBoot 2.0整合quartz发布定时任务/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="mathias">
+      <meta itemprop="description" content="面朝大海，春暖花开，学无止境...">
+      <meta itemprop="image" content="//tvax2.sinaimg.cn/crop.0.0.1002.1002.180/00795Chgly8fr7iw7iilkj30ru0ru40s.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mathias's blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">SpringBoot 2.0 +定时任务
+              
+            
+          </h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-06-15 15:25:26 / 修改时间：15:54:03" itemprop="dateCreated datePublished" datetime="2018-06-15T15:25:26+08:00">2018-06-15</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
           
-        
-        嗯..! 目前共计 3 篇日志。 继续努力。
-      </span>
-      
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/SpringBoot/" itemprop="url" rel="index"><span itemprop="name">SpringBoot</span></a></span>
 
-      
-
-        
-        
-        
-
-        
+                
+                
+              
+            </span>
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2018">2018</h1>
-          </div>
-        
-        
 
-        
+          
+            
+          
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
+          
+             <span id="/2018/06/15/SpringBoot 2.0整合quartz发布定时任务/" class="leancloud_visitors" data-flag-title="SpringBoot 2.0 +定时任务">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/06/15/SpringBoot 2.0整合quartz发布定时任务/" itemprop="url">
-              
-                <span itemprop="name">SpringBoot 2.0 +定时任务</span>
-              
-            </a>
-        
-      </h2>
+          
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-06-15T15:25:26+08:00"
-              content="2018-06-15" >
-          06-15
-        </time>
-      </div>
+          
 
-    </header>
-  </article>
+          
 
+        </div>
+      </header>
+    
 
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/06/15/nosql/" itemprop="url">
-              
-                <span itemprop="name">初识NoSQL</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-06-15T14:58:37+08:00"
-              content="2018-06-15" >
-          06-15
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/06/13/aboutMe/" itemprop="url">
-              
-                <span itemprop="name">关于我</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-06-13T16:09:41+08:00"
-              content="2018-06-13" >
-          06-13
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
+      
+        <p><img src="http://lc-7t0bebm8.cn-n1.lcfile.com/2f2c4529aebefbbd447b.jpg" alt=""><br><a id="more"></a></p>
+<h2 id="使用工具"><a href="#使用工具" class="headerlink" title="使用工具"></a>使用工具</h2><ul>
+<li><strong>IntelliJ IDEA 2018.1 x64</strong></li>
+<li><strong>jdk8</strong></li>
+<li><strong>SpringBoot 2.0</strong></li>
+</ul>
+<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><ol>
+<li>首先，先创建一个SpringBoot项目，在pom.xml里面添加依赖<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--定时任务依赖--&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">&lt;artifactId&gt;spring-boot-starter-quartz&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>2.然后，包名下面创建config目录，创建QuartzConfig.java类作为定时任务的配置文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">@Configuration</span><br><span class="line">public class QuartzConfig &#123;</span><br><span class="line">    @Bean</span><br><span class="line">    public JobDetail testDataJobDetail()&#123;</span><br><span class="line">        return JobBuilder.newJob(TestQuartzJob.class)</span><br><span class="line">                .withIdentity(&quot;testDataJobDetail&quot;)</span><br><span class="line">                .storeDurably().build();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Bean</span><br><span class="line">    public Trigger testDataTrigger()&#123;</span><br><span class="line">//        设置定时同步缓存数据</span><br><span class="line">        ScheduleBuilder schedBuilder =SimpleScheduleBuilder.simpleSchedule()</span><br><span class="line">                .withIntervalInSeconds(1800).repeatForever();</span><br><span class="line"></span><br><span class="line">        return TriggerBuilder.newTrigger().forJob(testDataJobDetail())</span><br><span class="line">                .withIdentity(&quot;testDataTrigger&quot;)</span><br><span class="line">                .withSchedule(schedBuilder).build();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>其中TestQuartzJob是定时任务类,withIntervalInSeconds是设置时间进行同步，以秒为单位，这里设置了1800秒，也就是30分钟。<br>接下来，开始创建定时任务类TestQuartzJob，便于区分，我们新建包名job用来专门存放定时任务类<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">public class TestQuartzJob extends QuartzJobBean &#123;</span><br><span class="line"></span><br><span class="line">    private  static  final  Logger logger =LoggerFactory.getLogger(TestQuartzJob.class);</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    protected void executeInternal(JobExecutionContext jobExecutionContext)</span><br><span class="line">            throws JobExecutionException &#123;</span><br><span class="line">            logger.info(&quot;开始定时任务&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>为了方便测试，我们把之前设定的1800秒换成5秒，启动之后观察控制台的日志</p>
+<p><img src="http://lc-7t0bebm8.cn-n1.lcfile.com/4206880c6c82aa84ef54.png" alt=""></p>
+<p>注意日志时间，的确是5秒一次，这样我们的定时任务也就完成了。</p>
+<p>（PS:第一次自己写博客，写的不好请多指正，留下你的评论，一起探讨吧&gt;_&lt;）</p>
+
+      
     </div>
+
+    
+
+    
+    
+    
+	<div>
+
+<div>
+
+    <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+
+</div>
+
+</div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/SpringBoot/" rel="tag"><i class="fa fa-tag"></i> SpringBoot</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/06/15/nosql/" rel="next" title="初识NoSQL">
+                <i class="fa fa-chevron-left"></i> 初识NoSQL
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zNzMzMi8xMzg2Ng=="></div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -482,8 +538,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -606,6 +671,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用工具"><span class="nav-number">1.</span> <span class="nav-text">使用工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#步骤"><span class="nav-number">2.</span> <span class="nav-text">步骤</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -745,6 +826,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.3.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.3.0"></script>
+
+
 
   
 
@@ -769,6 +854,17 @@
 
 
 
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 

@@ -109,17 +109,17 @@
 
 
 
-  <meta name="keywords" content="NoSQL">
+  <meta name="keywords" content="SpringBoot,exception">
 <meta property="og:type" content="article">
-<meta property="og:title" content="初识NoSQL">
-<meta property="og:url" content="http://yoursite.com/2018/06/14/nosql/index.html">
+<meta property="og:title" content="SpringBoot2.0全局异常处理">
+<meta property="og:url" content="http://yoursite.com/2018/06/19/SpringBoot全局异常处理/index.html">
 <meta property="og:site_name" content="Mathias&#39;s Blog">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://lc-7t0bebm8.cn-n1.lcfile.com/65fc96f5077c1d5b1f4e.jpg">
-<meta property="og:updated_time" content="2018-06-13T16:00:00.000Z">
+<meta property="og:image" content="http://lc-7t0bebm8.cn-n1.lcfile.com/ea44603cafdefc75acaa.jpg">
+<meta property="og:updated_time" content="2018-06-19T03:24:21.209Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="初识NoSQL">
-<meta name="twitter:image" content="http://lc-7t0bebm8.cn-n1.lcfile.com/65fc96f5077c1d5b1f4e.jpg">
+<meta name="twitter:title" content="SpringBoot2.0全局异常处理">
+<meta name="twitter:image" content="http://lc-7t0bebm8.cn-n1.lcfile.com/ea44603cafdefc75acaa.jpg">
 
 
 
@@ -128,7 +128,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/06/14/nosql/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/06/19/SpringBoot全局异常处理/"/>
 
 
 
@@ -138,7 +138,7 @@
   };
 </script>
 
-  <title>初识NoSQL | Mathias's Blog</title>
+  <title>SpringBoot2.0全局异常处理 | Mathias's Blog</title>
   
 
 
@@ -307,7 +307,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/14/nosql/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/19/SpringBoot全局异常处理/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="mathias">
@@ -324,7 +324,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">初识NoSQL
+          <h1 class="post-title" itemprop="name headline">SpringBoot2.0全局异常处理
               
             
           </h1>
@@ -349,9 +349,13 @@
                 
               
 
-              <time title="创建时间：2018-06-14 00:00:00" itemprop="dateCreated datePublished" datetime="2018-06-14T00:00:00+08:00">2018-06-14</time>
+              <time title="创建时间：2018-06-19 10:48:38 / 修改时间：11:24:21" itemprop="dateCreated datePublished" datetime="2018-06-19T10:48:38+08:00">2018-06-19</time>
             
 
+            
+              
+
+              
             
           </span>
 
@@ -367,7 +371,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/NoSQL/" itemprop="url" rel="index"><span itemprop="name">NoSQL</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/SpringBoot/" itemprop="url" rel="index"><span itemprop="name">SpringBoot</span></a></span>
 
                 
                 
@@ -381,7 +385,7 @@
 
           
           
-             <span id="/2018/06/14/nosql/" class="leancloud_visitors" data-flag-title="初识NoSQL">
+             <span id="/2018/06/19/SpringBoot全局异常处理/" class="leancloud_visitors" data-flag-title="SpringBoot2.0全局异常处理">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -412,44 +416,27 @@
       
 
       
-        <p><img src="http://lc-7t0bebm8.cn-n1.lcfile.com/65fc96f5077c1d5b1f4e.jpg" alt=""><br><a id="more"></a></p>
-<h2 id="NoSql-简介"><a href="#NoSql-简介" class="headerlink" title="NoSql 简介"></a>NoSql 简介</h2><p>NOSQL(<strong>NOSQL = NOT ONLY SQL</strong>)，意即”不仅仅是SQL”。在现代的计算系统上每天网络上都会产生庞大的数据量。通过应用实践证明，关系模型是非常适合于客户服务器编程，远远超出预期的利益，今天它是结构化数据存储在网络和商务应用的主导技术。<br>NOSQL 是一项全新的数据库革命性运动，早期就有人提出，发展至2009年趋势越发高涨。NOSQL的拥护者们提倡运用非关系型的数据存储，相对于铺天盖地的关系型数据库运用，这一概念无疑是一种全新的思维的注入。</p>
-<h2 id="关系型数据库遵循ACID规则"><a href="#关系型数据库遵循ACID规则" class="headerlink" title="关系型数据库遵循ACID规则"></a>关系型数据库遵循ACID规则</h2><p>事务在英文中是transaction，和现实世界中的交易很类似，它有如下四个特性：<br>1.　 <strong>A (Atomicity) 原子性</strong><br>　　原子性很容易理解，也就是说<strong>事务里的所有操作要么全部做完，要么都不做，事务成功的条件是事务里的所有操作都成功，只要有一个操作失败，整个事务就失败，需要回滚</strong>。<br>　　比如银行转账，从A账户转100元至B账户，分为两个步骤：1）从A账户取100元；2）存入100元至B账户。这两步要么一起完成，要么一起不完成，如果只完成第一步，第二步失败，钱会莫名其妙少了100元。<br>2.　 <strong>C (Consistency) 一致性</strong><br>　　一致性也比较容易理解，也就是说<strong>数据库要一直处于一致的状态，事务的运行不会改变数据库原本的一致性约束。</strong><br>　　例如现有完整性约束a+b=10，如果一个事务改变了a，那么必须得改变b，使得事务结束后依然满足a+b=10，否则事务失败。<br>3.　 <strong>I (Isolation) 独立性</strong><br>　　所谓的独立性是指<strong>并发的事务之间不会互相影响，如果一个事务要访问的数据正在被另外一个事务修改，只要另外一个事务未提交，它所访问的数据就不受未提交事务的影响。</strong><br>　　比如现在有个交易是从A账户转100元至B账户，在这个交易还未完成的情况下，如果此时B查询自己的账户，是看不到新增加的100元的。<br>4.　 <strong>D (Durability) 持久性</strong><br>　　持久性是指<strong>一旦事务提交后，它所做的修改将会永久的保存在数据库上，即使出现宕机也不会丢失。</strong></p>
-<h2 id="关系型数据库（RDBMS）与NoSQL对比"><a href="#关系型数据库（RDBMS）与NoSQL对比" class="headerlink" title="关系型数据库（RDBMS）与NoSQL对比"></a>关系型数据库（RDBMS）与NoSQL对比</h2><p><strong>RDBMS</strong> </p>
-<ul>
-<li>高度组织化结构化数据 </li>
-<li>结构化查询语言（SQL） (SQL) </li>
-<li>数据和关系都存储在单独的表中。 </li>
-<li>数据操纵语言，数据定义语言 </li>
-<li>严格的一致性</li>
-<li>基础事务</li>
+        <p><img src="http://lc-7t0bebm8.cn-n1.lcfile.com/ea44603cafdefc75acaa.jpg" alt=""><br><a id="more"></a><br>在实际项目开发中，我们会遇到各种各样的异常，如果我们对这些异常不做处理直接暴露给用户的话，肯定是一种不好的体验，所以我们想办法捕获异常。最常见的方法是用try-catch 赖不活并设置返回信息，但是我们如果每个异常都去try-catch的话，无异是一件很费力的事情，所以我们有必要寻找一个可以处理全局异常的方法…</p>
+<h2 id="使用工具"><a href="#使用工具" class="headerlink" title="使用工具"></a>使用工具</h2><ul>
+<li><strong>IntelliJ IDEA 2018.1 x64</strong></li>
+<li><strong>jdk8</strong></li>
+<li><strong>SpringBoot 2.0.3</strong></li>
 </ul>
-<p><strong>NoSQL</strong></p>
-<ul>
-<li>代表着不仅仅是SQL</li>
-<li>没有声明性查询语言</li>
-<li>没有预定义的模式</li>
-<li><strong>键 - 值对存储，列存储，文档存储，图形数据库</strong></li>
-<li>最终一致性，而非ACID属性</li>
-<li>非结构化和不可预知的数据</li>
-<li>CAP定理 </li>
-<li><strong>高性能，高可用性和可伸缩性</strong></li>
-</ul>
-<h2 id="NoSQL优点和缺点"><a href="#NoSQL优点和缺点" class="headerlink" title="NoSQL优点和缺点"></a>NoSQL优点和缺点</h2><p><strong>优点：</strong></p>
-<ul>
-<li>高可扩展性</li>
-<li>分布式计算</li>
-<li>低成本</li>
-<li>架构的灵活性，半结构化数据</li>
-<li>没有复杂的关系</li>
-</ul>
-<p><strong>缺点:</strong></p>
-<ul>
-<li>没有标准化</li>
-<li>有限的查询功能（到目前为止）</li>
-<li>最终一致是不直观的程序</li>
-</ul>
-<p>文章摘自<a href="http://www.runoob.com/mongodb/nosql.html" title="菜鸟教程" target="_blank" rel="noopener">菜鸟教程</a>，仅供学习，勿用作其他用途。</p>
+<h2 id="添加依赖"><a href="#添加依赖" class="headerlink" title="添加依赖"></a>添加依赖</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">dependencies&gt;</span><br><span class="line">    &lt;dependency&gt;</span><br><span class="line">        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">        &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;</span><br><span class="line">    &lt;/dependency&gt;</span><br><span class="line">    &lt;dependency&gt;</span><br><span class="line">        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">        &lt;artifactId&gt;spring-boot-starter-test&lt;/artifactId&gt;</span><br><span class="line">        &lt;scope&gt;test&lt;/scope&gt;</span><br><span class="line">    &lt;/dependency&gt;</span><br><span class="line">&lt;/dependencies&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="创建异常返回信息模板ErrorResponseEntity"><a href="#创建异常返回信息模板ErrorResponseEntity" class="headerlink" title="创建异常返回信息模板ErrorResponseEntity"></a>创建异常返回信息模板ErrorResponseEntity</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * @author ：mathias</span><br><span class="line"> * Description: 异常信息模板</span><br><span class="line"> * Date: 2018/6/19</span><br><span class="line"> */</span><br><span class="line">public class ErrorResponseEntity &#123;</span><br><span class="line">    private int code;</span><br><span class="line">    private String msg;</span><br><span class="line"></span><br><span class="line">    public ErrorResponseEntity(int code, String msg) &#123;</span><br><span class="line">        this.code = code;</span><br><span class="line">        this.msg = msg;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">  --省略setter、getter方法</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="创建自定义异常TestException"><a href="#创建自定义异常TestException" class="headerlink" title="创建自定义异常TestException"></a>创建自定义异常TestException</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * @author ：mathias</span><br><span class="line"> * Description:自定义异常</span><br><span class="line"> * Date: 2018/6/19</span><br><span class="line"> */</span><br><span class="line"></span><br><span class="line">public class TestException  extends  RuntimeException&#123;</span><br><span class="line"></span><br><span class="line">    private int code ;</span><br><span class="line"></span><br><span class="line">    public TestException(int code, String message) &#123;</span><br><span class="line">        super(message);</span><br><span class="line">        this.setCode(code);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">     --省略setter、getter方法</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="创建全局处理异常GlobalExceptionHandler"><a href="#创建全局处理异常GlobalExceptionHandler" class="headerlink" title="创建全局处理异常GlobalExceptionHandler"></a>创建全局处理异常GlobalExceptionHandler</h2><pre><code>注解解释
+
+-@ControllerAdvice捕获Controller层抛出的异常，如果添加@ResponseBody返回信息则为JSON格式。
+-@RestControllerAdvice相当于 @ControllerAdvice 与 @ResponseBody的结合体。
+-@ExceptionHandler统一处理一种类的异常，减少代码重复率，降低复杂度。
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * @author ：mathias</span><br><span class="line"> * Description: 全局异常处理 </span><br><span class="line"> * Date: 2018/6/19</span><br><span class="line"> */</span><br><span class="line">@RestControllerAdvice</span><br><span class="line">public class GlobalExceptionHandler extends ResponseEntityExceptionHandler &#123;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 定义要捕获的异常，多个异常用 @ExceptionHandler(&#123;&#125;)</span><br><span class="line">     * @param request</span><br><span class="line">     * @param e</span><br><span class="line">     * @param response</span><br><span class="line">     * @return 响应结果</span><br><span class="line">     */</span><br><span class="line">    @ExceptionHandler(TestException.class)</span><br><span class="line">    public ErrorResponseEntity testExceptionHandler(HttpServletRequest request,</span><br><span class="line">                                                    final Exception e ,</span><br><span class="line">                                                    HttpServletResponse response)&#123;</span><br><span class="line">        response.setStatus(HttpStatus.BAD_REQUEST.value());</span><br><span class="line">        RuntimeException exception = (RuntimeException) e;</span><br><span class="line">        return new ErrorResponseEntity(400,exception.getMessage());</span><br><span class="line">    &#125;</span><br><span class="line">    /**</span><br><span class="line">     * 定义要捕获的异常，多个异常用 @ExceptionHandler(&#123;&#125;)</span><br><span class="line">     * @param request</span><br><span class="line">     * @param e</span><br><span class="line">     * @param response</span><br><span class="line">     * @return 响应结果</span><br><span class="line">     */</span><br><span class="line">    @ExceptionHandler(RuntimeException.class)</span><br><span class="line">    public ErrorResponseEntity runtimeException(HttpServletRequest request,</span><br><span class="line">                                                final Exception e , </span><br><span class="line">                                                HttpServletResponse response)&#123;</span><br><span class="line">        response.setStatus(HttpStatus.BAD_REQUEST.value());</span><br><span class="line">        RuntimeException exception = (RuntimeException) e;</span><br><span class="line">        return new ErrorResponseEntity(400,exception.getMessage());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 通用接口映射处理异常</span><br><span class="line">     * @param ex</span><br><span class="line">     * @param body</span><br><span class="line">     * @param headers</span><br><span class="line">     * @param status</span><br><span class="line">     * @param request</span><br><span class="line">     * @return</span><br><span class="line">     */</span><br><span class="line">    @Override</span><br><span class="line">    protected ResponseEntity&lt;Object&gt; handleExceptionInternal(Exception ex,</span><br><span class="line">                                                             Object body,</span><br><span class="line">                                                             HttpHeaders headers,</span><br><span class="line">                                                             HttpStatus status,</span><br><span class="line">                                                             WebRequest request) &#123;</span><br><span class="line">        if (ex instanceof MethodArgumentNotValidException) &#123;</span><br><span class="line">            MethodArgumentNotValidException exception = (MethodArgumentNotValidException) ex;</span><br><span class="line">            return new ResponseEntity&lt;&gt;(new ErrorResponseEntity(status.value(),</span><br><span class="line">                    exception.getBindingResult().getAllErrors().get(0).getDefaultMessage()), status);</span><br><span class="line">        &#125;</span><br><span class="line">        if (ex instanceof MethodArgumentTypeMismatchException) &#123;</span><br><span class="line">            MethodArgumentTypeMismatchException exception = (MethodArgumentTypeMismatchException) ex;</span><br><span class="line">            logger.error(&quot;参数转换失败，方法：&quot; + exception.getParameter().getMethod().getName() </span><br><span class="line">                    + &quot;，参数：&quot; + exception.getName()</span><br><span class="line">                    + &quot;,信息：&quot; + exception.getLocalizedMessage());</span><br><span class="line">            return new ResponseEntity&lt;&gt;(new ErrorResponseEntity(status.value(), &quot;参数转换失败&quot;), status);</span><br><span class="line">        &#125;</span><br><span class="line">        return new ResponseEntity&lt;&gt;(new ErrorResponseEntity(status.value(), &quot;参数转换失败&quot;), status);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p>创建TestController<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * @author ：mathias</span><br><span class="line"> * Description:测试全局异常</span><br><span class="line"> * Date: 2018/6/19</span><br><span class="line"> */</span><br><span class="line">@RestController</span><br><span class="line">public class TestController &#123;</span><br><span class="line">    @RequestMapping(&quot;/testException&quot;)</span><br><span class="line">    public String testException(Integer num )&#123;</span><br><span class="line">        if (num == null)&#123;</span><br><span class="line">            throw new TestException(400,&quot;num 不能为空&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">        int i = 10 / num;</span><br><span class="line">        return &quot;result: &quot;+ i;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这里当num = null的时候就抛出我们的自定义异常，然后全局异常捕获，返回我们异常模板的信息。启动项目，访问<strong><a href="http://localhost:8080/testException" target="_blank" rel="noopener">http://localhost:8080/testException</a></strong>，返回结果<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	code: 400,</span><br><span class="line">	msg: &quot;num 不能为空&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>再访问 <strong><a href="http://localhost:8080/testException?num=0" target="_blank" rel="noopener">http://localhost:8080/testException?num=0</a></strong>，返回结果<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	code: 400,</span><br><span class="line">	msg: &quot;/ by zero&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>访问 <strong><a href="http://localhost:8080/testException?num=2" target="_blank" rel="noopener">http://localhost:8080/testException?num=2</a></strong>，返回结果<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">result: 5</span><br></pre></td></tr></table></figure></p>
+<p>好了，这样就完成了我们的全局异常处理。</p>
+<h2 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h2><p>文章参考<strong><a href="http://blog.battcn.com/2018/06/01/springboot/v2-other-exception/" target="_blank" rel="noopener">http://blog.battcn.com/2018/06/01/springboot/v2-other-exception/</a></strong></p>
 
       
     </div>
@@ -478,7 +465,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/NoSQL/" rel="tag"><i class="fa fa-tag"></i> NoSQL</a>
+            <a href="/tags/SpringBoot/" rel="tag"><i class="fa fa-tag"></i> SpringBoot</a>
+          
+            <a href="/tags/exception/" rel="tag"><i class="fa fa-tag"></i> exception</a>
           
         </div>
       
@@ -491,15 +480,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2018/06/17/SpringBoot2.0整合redis缓存数据/" rel="next" title="SpringBoot2.0使用redis作数据缓存">
+                <i class="fa fa-chevron-left"></i> SpringBoot2.0使用redis作数据缓存
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/06/15/SpringBoot 2.0整合quartz发布定时任务/" rel="prev" title="SpringBoot2.0整合quartz发布定时任务">
-                SpringBoot2.0整合quartz发布定时任务 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -700,7 +689,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#NoSql-简介"><span class="nav-number">1.</span> <span class="nav-text">NoSql 简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关系型数据库遵循ACID规则"><span class="nav-number">2.</span> <span class="nav-text">关系型数据库遵循ACID规则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关系型数据库（RDBMS）与NoSQL对比"><span class="nav-number">3.</span> <span class="nav-text">关系型数据库（RDBMS）与NoSQL对比</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NoSQL优点和缺点"><span class="nav-number">4.</span> <span class="nav-text">NoSQL优点和缺点</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用工具"><span class="nav-number">1.</span> <span class="nav-text">使用工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加依赖"><span class="nav-number">2.</span> <span class="nav-text">添加依赖</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建异常返回信息模板ErrorResponseEntity"><span class="nav-number">3.</span> <span class="nav-text">创建异常返回信息模板ErrorResponseEntity</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建自定义异常TestException"><span class="nav-number">4.</span> <span class="nav-text">创建自定义异常TestException</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建全局处理异常GlobalExceptionHandler"><span class="nav-number">5.</span> <span class="nav-text">创建全局处理异常GlobalExceptionHandler</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#测试"><span class="nav-number">6.</span> <span class="nav-text">测试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结尾"><span class="nav-number">7.</span> <span class="nav-text">结尾</span></a></li></ol></div>
             
 
           </div>

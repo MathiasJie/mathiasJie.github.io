@@ -111,14 +111,14 @@
 
   <meta name="keywords" content="SpringBoot,JWT">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SpringBoot整合JWT">
+<meta property="og:title" content="SpringBoot整合JWT取代session">
 <meta property="og:url" content="http://yoursite.com/2018/06/21/SpringBoot整合jwt/index.html">
 <meta property="og:site_name" content="Mathias&#39;s Blog">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://lc-7t0bebm8.cn-n1.lcfile.com/be1718827eb95d638ff5.jpg">
-<meta property="og:updated_time" content="2018-06-21T09:43:23.948Z">
+<meta property="og:updated_time" content="2018-06-21T09:54:17.829Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SpringBoot整合JWT">
+<meta name="twitter:title" content="SpringBoot整合JWT取代session">
 <meta name="twitter:image" content="http://lc-7t0bebm8.cn-n1.lcfile.com/be1718827eb95d638ff5.jpg">
 
 
@@ -138,7 +138,7 @@
   };
 </script>
 
-  <title>SpringBoot整合JWT | Mathias's Blog</title>
+  <title>SpringBoot整合JWT取代session | Mathias's Blog</title>
   
 
 
@@ -324,7 +324,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">SpringBoot整合JWT
+          <h1 class="post-title" itemprop="name headline">SpringBoot整合JWT取代session
               
             
           </h1>
@@ -349,7 +349,7 @@
                 
               
 
-              <time title="创建时间：2018-06-21 16:03:43 / 修改时间：17:43:23" itemprop="dateCreated datePublished" datetime="2018-06-21T16:03:43+08:00">2018-06-21</time>
+              <time title="创建时间：2018-06-21 16:03:43 / 修改时间：17:54:17" itemprop="dateCreated datePublished" datetime="2018-06-21T16:03:43+08:00">2018-06-21</time>
             
 
             
@@ -385,7 +385,7 @@
 
           
           
-             <span id="/2018/06/21/SpringBoot整合jwt/" class="leancloud_visitors" data-flag-title="SpringBoot整合JWT">
+             <span id="/2018/06/21/SpringBoot整合jwt/" class="leancloud_visitors" data-flag-title="SpringBoot整合JWT取代session">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -418,7 +418,7 @@
       
         <p><img src="http://lc-7t0bebm8.cn-n1.lcfile.com/be1718827eb95d638ff5.jpg" alt=""></p>
 <a id="more"></a>
-<p>关于<strong>JWT(Json Web Token)</strong>的含义就不多做介绍了，主要记录下jwt在SpringBoot中的用法。</p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>关于<strong>JWT(Json Web Token)</strong>的含义就不多做介绍了，最常见的是和shiro、springSercurity等一起使用来进行鉴权操作，这次主要记录下jwt在SpringBoot中的用法，有时间再研究下和SpringSercurity一起使用。</p>
 <h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><ul>
 <li><strong>IntelliJ IDEA 2018.1 x64</strong></li>
 <li><strong>jdk8</strong></li>
@@ -700,7 +700,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#开始"><span class="nav-number">1.</span> <span class="nav-text">开始</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#大致流程"><span class="nav-number">2.</span> <span class="nav-text">大致流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#redis作用"><span class="nav-number">3.</span> <span class="nav-text">redis作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加依赖"><span class="nav-number">4.</span> <span class="nav-text">添加依赖</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置文件application-yml"><span class="nav-number">5.</span> <span class="nav-text">配置文件application.yml</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实体类UserBean"><span class="nav-number">6.</span> <span class="nav-text">实体类UserBean</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dao层UserJpa"><span class="nav-number">7.</span> <span class="nav-text">Dao层UserJpa</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Service层"><span class="nav-number">8.</span> <span class="nav-text">Service层</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#工具类JwtUtil"><span class="nav-number">9.</span> <span class="nav-text">工具类JwtUtil</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#验证"><span class="nav-number">10.</span> <span class="nav-text">验证</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#写在最后"><span class="nav-number">11.</span> <span class="nav-text">写在最后</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开始"><span class="nav-number">2.</span> <span class="nav-text">开始</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#大致流程"><span class="nav-number">3.</span> <span class="nav-text">大致流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#redis作用"><span class="nav-number">4.</span> <span class="nav-text">redis作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加依赖"><span class="nav-number">5.</span> <span class="nav-text">添加依赖</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置文件application-yml"><span class="nav-number">6.</span> <span class="nav-text">配置文件application.yml</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实体类UserBean"><span class="nav-number">7.</span> <span class="nav-text">实体类UserBean</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dao层UserJpa"><span class="nav-number">8.</span> <span class="nav-text">Dao层UserJpa</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Service层"><span class="nav-number">9.</span> <span class="nav-text">Service层</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#工具类JwtUtil"><span class="nav-number">10.</span> <span class="nav-text">工具类JwtUtil</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#验证"><span class="nav-number">11.</span> <span class="nav-text">验证</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#写在最后"><span class="nav-number">12.</span> <span class="nav-text">写在最后</span></a></li></ol></div>
             
 
           </div>
